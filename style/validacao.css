@@ -58,7 +58,7 @@ input:focus {
 
 button {
     display: flex;
-    
+    flex-direction: column;
     width: 100%;
     padding: 12px;
     background-color: #4f46e5;
