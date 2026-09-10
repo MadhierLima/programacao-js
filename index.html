@@ -3,15 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
-    <script src="./script/script.js" defer></script>
-    <title>JavaScript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 30px;
+        }
+
+        .header p {
+            color: #777;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px;
+            text-decoration: none;
+            color: #333;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        
+        .card:hover {
+            background-color: #eef1ff;
+            border-color: #5c6cff;
+        }
+
+        .icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #5c6cff;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+        }
+    </style>
+    <title>Atividades JavaScript</title>
 </head>
 <body>
-    <div class="links">
-        <a href="./validacao.html">Validação</a>
-        <a href="./contador.html">Contador</a>
-        <a href="./calc.html">Calculadora</a>
-    </div>
+    <main class="container">
+        <header class="header">
+            <h1>Atividades JavaScript</h1>
+            <p>Exercícios desenvolvido para faculdade</p>
+        </header>
+        <nav class="links">
+            <a href="./validacao.html" class="card">Validação
+                <div class="icon">01</div>
+                <div>
+                    <h2>Validação</h2>
+                    <p>Exercício de validacao de formulário</p>
+                </div>
+            </a>
+            <a href="./contador.html" class="card">Contador
+                <div class="icon">02</div>
+                <div>
+                    <h2>Contador</h2>
+                    <p>Exercício utilizando operações e JavaScript</p>
+                </div>
+            </a>
+            <a href="./calc.html" class="card">Calculadora
+                <div class="icon">03</div>
+                <div>
+                    <h2>Calculadora</h2>
+                    <p>Exercício de cálculos utilizando JavaScript</p>
+                </div>
+            </a>
+        </nav>
+        <footer>
+            <p>Atividades acadêmicas • JavaScript</p>
+        </footer>
+    </main>
 </body>
 </html>
