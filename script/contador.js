@@ -1,21 +1,54 @@
 let contador = 0;
-
+const salvo = localStorage.getItem("contador");
 const numero = document.getElementById("numero");
 const incrementar = document.getElementById("incrementar");
 const decrementar = document.getElementById("decrementar");
 const zerar = document.getElementById("zerar");
 
-incrementar.addEventListener("click", function() {
+if(salvo !== null) {
+    contador = Number(salvo);
+}
+
+function atualizarTela() {
+    numero.textContent = contador;
+    numero.classList.remove("positivo", "negativo");
+
+    if(contador > 0) {
+        numero.classList.add("positivo");
+    } else if (contador < 0) {
+        numero.classList.add("negativo");
+    }
+
+    localStorage.setItem("contador", contador);
+}
+
+function aumentar() {
     contador++;
-    numero.textContent = contador;
-});
+    atualizarTela();
+};
 
-decrementar.addEventListener("click", function() {
+function diminuir() {
     contador--;
-    numero.textContent = contador;
+    atualizarTela();
+};
+
+function zerarContador(){
+    contador = 0;
+    atualizarTela();
+};
+
+incrementar.addEventListener("click", aumentar);
+decrementar.addEventListener("click", diminuir);
+zerar.addEventListener("click", zerarContador);
+
+document.addEventListener("keydown", function (evento) {
+    if (evento.key === "ArrowUp") {
+        evento.preventDefault(); // evita a página rolar
+        aumentar();
+    } else if (evento.key === "ArrowDown") {
+        evento.preventDefault();
+        diminuir();
+    }
 });
 
-zerar.addEventListener("click", function(){
-    contador = 0;
-    numero.textContent = contador;
-});
+atualizarTela();
