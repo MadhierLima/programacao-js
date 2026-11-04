@@ -9,19 +9,27 @@
 </head>
 <body>
     <h1>Formulário</h1>
-    <form id="form">
-        <label for="nome">Nome: </label>
-        <input type="text" id="nome" placeholder="Digite seu Nome" required><br>
-
-        <label for="idade">Idade: </label>
-        <input type="number" id="idade" placeholder="Digite sua Idade" required><br>
-
-        <label for="email">Email: </label>
-        <input type="email" name="email" id="email" placeholder="example@ex.com" required><br>
-
-        <button type="submit">Enviar</button>
-        <button onclick="limparCampos()">Limpar</button>
+    <form id="form" novalidate>
+        <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome" autocomplete="name" required aria-describedby="erro-nome">
+            <span class="erro" id="erro-nome"></span>
+        </div>
+        <div class="campo">
+            <label for="idade">Idade</label>
+            <input type="number" name="idade" id="idade" placeholder="Digite sua idade" min="1" max="120" step="1" required aria-describedby="erro-idade">
+            <span class="erro" id="erro-idade"></span>
+        </div>
+        <div class="campo">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="example@email.com" autocomplete="email" required aria-describedby="erro-email">
+            <span class="erro" id="erro-email"></span>
+        </div>
+        <div class="acoes">
+            <button type="submit">Enviar</button>
+            <button type="reset" class="secundario">Limpar</button>
+        </div>
     </form>
-    <div id="resultado"></div>
+    <div id="resultado" aria-live="polite"></div>
 </body>
 </html>
