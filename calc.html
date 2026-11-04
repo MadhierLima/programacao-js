@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,28 +8,36 @@
     <title>Calculadora JS</title>
 </head>
 <body>
-    <div class="calculator">
-        <div class="display" id="display"></div>
-        <div class="buttons">
-            <button class="button light-gray" onclick="clearDisplay()">C</button>
-            <button class="button light-gray" onclick="appendOperator('%')">%</button>
-            <button class="button light-gray" onclick="appendOperator('.')">.</button>
-            <button class="button orange" onclick="appendOperator('/')">/</button>
-            <button class="button dark-gray" onclick="appendNumber('7')">7</button>
-            <button class="button dark-gray" onclick="appendNumber('8')">8</button>
-            <button class="button dark-gray" onclick="appendNumber('9')">9</button>
-            <button class="button orange" onclick="appendOperator('*')">*</button>
-            <button class="button dark-gray" onclick="appendNumber('4')">4</button>
-            <button class="button dark-gray" onclick="appendNumber('5')">5</button>
-            <button class="button dark-gray" onclick="appendNumber('6')">6</button>
-            <button class="button orange" onclick="appendOperator('-')">-</button>
-            <button class="button dark-gray" onclick="appendNumber('1')">1</button>
-            <button class="button dark-gray" onclick="appendNumber('2')">2</button>
-            <button class="button dark-gray" onclick="appendNumber('3')">3</button>
-            <button class="button orange" onclick="appendOperator('+')">+</button>
-            <button class="button dark-gray wide" onclick="appendNumber('0')">0</button>
-            <button class="button orange" onclick="calculate()">=</button>
+    <main class="calculator">
+        <div class="display" aria-live="polite">
+            <div class="historico" id="historico"></div>
+            <div class="visor" id="visor">0</div>
         </div>
-    </div>
+        <div class="buttons">
+            <button class="button light-gray" data-acao="limpar">C</button>
+            <button class="button light-gray" data-acao="apagar" aria-label="Apagar">⌫</button>
+            <button class="button light-gray" data-acao="porcentagem">%</button>
+            <button class="button orange" data-operador="/" aria-label="Dividir">÷</button>
+
+            <button class="button dark-gray" data-numero="7">7</button>
+            <button class="button dark-gray" data-numero="8">8</button>
+            <button class="button dark-gray" data-numero="9">9</button>
+            <button class="button orange" data-operador="*" aria-label="Multiplicar">×</button>
+
+            <button class="button dark-gray" data-numero="4">4</button>
+            <button class="button dark-gray" data-numero="5">5</button>
+            <button class="button dark-gray" data-numero="6">6</button>
+            <button class="button orange" data-operador="-" aria-label="Subtrair">−</button>
+
+            <button class="button dark-gray" data-numero="1">1</button>
+            <button class="button dark-gray" data-numero="2">2</button>
+            <button class="button dark-gray" data-numero="3">3</button>
+            <button class="button orange" data-operador="+" aria-label="Somar">+</button>
+
+            <button class="button dark-gray wide" data-numero="0">0</button>
+            <button class="button dark-gray" data-acao="decimal" aria-label="Vírgula">,</button>
+            <button class="button orange" data-acao="igual" aria-label="Igual">=</button>
+        </div>
+    </main>
 </body>
 </html>
